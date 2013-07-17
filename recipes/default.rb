@@ -38,3 +38,12 @@ execute "initialize myface database" do
   command "mysql -h localhost -u root -p#{node['mysql']['server_root_password']} -D myface < /tmp/myface-init.sql"
   not_if "mysql -h localhost -u root -p#{node['mysql']['server_root_password']} -D myface -e 'describe users;'"
 end
+
+# #################
+# Webserver Section
+# #################
+
+node.default['apache']['default_site_enabled'] = false
+
+include_recipe "apache2"
+include_recipe "apache2::mod_php5"
