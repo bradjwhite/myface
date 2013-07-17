@@ -13,6 +13,8 @@ None (yet)
 # Recipes
 default.rb
   - Creates myface users
+  - Installs MySQL
+  - Creates MySQL schema, seeds schema with test data
 
 # Author
 
